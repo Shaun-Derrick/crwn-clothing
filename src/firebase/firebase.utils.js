@@ -1,7 +1,6 @@
 import firebase from "firebase/app"
 import "firebase/firestore"
 import "firebase/auth"
-import { initialize } from "workbox-google-analytics"
 
 const config = {
   apiKey: "AIzaSyBTPL03rdhzaw9w-abyyUHdw7gOQtjzTJM",

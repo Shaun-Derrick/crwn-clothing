@@ -7,3 +7,8 @@ a {
   text-decoration: none;
   color: black;
 }
+
+* {
+  /* disregards padding and aligns all boxes within the app */
+  box-sizing: border-box;
+}
