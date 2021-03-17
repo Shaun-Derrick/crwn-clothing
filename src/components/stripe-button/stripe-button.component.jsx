@@ -17,8 +17,9 @@ const StripeCheckoutButton = ({ price }) => {
         name="CRWN Clothing Ltd."
         billingAddress
         shippingAddress
-        image='https://sendeyo.com/en/f3eb2117da'
+        // image='https://sendeyo.com/en/f3eb2117da'
         // image='https://svgshare.com/i/CUz.svg'
+        // image= "url(../../assets/crown.svg)"
         description={`Your total is $${price}`}
         amount={priceForStripe}
         panelLabel="Pay Now"
