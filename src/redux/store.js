@@ -4,7 +4,11 @@ import logger from "redux-logger"
 
 import rootReducer from "./root-reducer"
 // using an array to store middleware allows you to dynamically add additional middleware as required
-const middlewares = [logger]
+const middlewares = []
+
+if (process.env.NODE_ENV === "development") {
+  middlewares.push(logger)
+}
 
 export const store = createStore(rootReducer, applyMiddleware(...middlewares))
 
