@@ -36,3 +36,14 @@ export const selectCollection = memoize((collectionUrlParam) =>
     collections ? collections[collectionUrlParam] : null
   )
 )
+
+export const selectIsCollectionFetching = createSelector(
+  [selectShop],
+  (shop) => shop.isFetching
+)
+
+export const selectIsCollectionsLoaded = createSelector(
+  [selectShop],
+  // use a double bang/is not exclamation mark to convert an objects state to a truthy or falsey value an empty object is null which returns a true bolean value
+  (shop) => !!shop.collections
+)
