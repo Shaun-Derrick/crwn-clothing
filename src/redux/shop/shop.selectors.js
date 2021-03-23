@@ -20,7 +20,8 @@ export const selectCollections = createSelector(
 export const selectCollectionsForPreview = createSelector(
   [selectCollections],
   // converts a object into an array
-  (collections) => Object.keys(collections).map((key) => collections[key])
+  (collections) =>
+    collections ? Object.keys(collections).map((key) => collections[key]) : []
 )
 
 // export const selectCollection = (collectionUrlParam) =>
@@ -31,8 +32,7 @@ export const selectCollectionsForPreview = createSelector(
 //   )
 // selector changed to memoize url parameter -- COLLECTION_ID_MAP no longer needed
 export const selectCollection = memoize((collectionUrlParam) =>
-  createSelector(
-    [selectCollections],
-    (collections) => collections[collectionUrlParam]
+  createSelector([selectCollections], (collections) =>
+    collections ? collections[collectionUrlParam] : null
   )
 )
