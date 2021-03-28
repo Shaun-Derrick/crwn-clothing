@@ -5,9 +5,22 @@ import CollectionItem from "../../components/collection-item/collection-item.com
 
 import { selectCollection } from "../../redux/shop/shop.selectors"
 
+// import { firestore } from "../../firebase/firebase.utils"
+
 import "./collection.styles.scss"
 
 const CollectionPage = ({ collection }) => {
+    // clean up function useEffect calls a clean up function when the component unmounts
+    // useEffect(() => {
+    //     console.log("I am subscribing")
+    //     const unsubscribeFromCollections = firestore.collection("collections").onSnapshot(snapshot => console.log(snapshot))
+
+    //     return () => {
+    //         console.log("I am unsubscribed")
+    //         unsubscribeFromCollections()
+    //     }
+
+    // }, [])
     const { title, items } = collection
     
     return (
